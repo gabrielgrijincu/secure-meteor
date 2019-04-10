@@ -1,27 +1,29 @@
-SSL = function(key, cert, port){
+
+SSL = (key, cert, port) => {
 	var httpProxy = Npm.require('http-proxy');
 	var fs = Npm.require('fs');
 	if(!port){
 		port = 443;
 	};
-	
+
 	const [,, host, targetPort] = Meteor.absoluteUrl().match(/([a-zA-Z]+):\/\/([\-\w\.]+)(?:\:(\d{0,5}))?/)
 
 	proxy = httpProxy.createServer({
 		target: {
     		host,
-    		port: targetPort
+			port: targetPort,
   		},
   		ssl: {
     		key,
     		cert
  		},
  		ws: true,
- 		xfwd: true
+		xfwd: true,
+		secure: false,
  	}).listen(port);
-	
+
 	proxy.on("error", function() {
-        	console.log("HTTP-PROXY NPM MODULE ERROR: " + err);
-        	return;
-      	});
+		console.log("HTTP-PROXY NPM MODULE ERROR: " + err);
+		return;
+	});
 };

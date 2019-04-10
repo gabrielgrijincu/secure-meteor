@@ -1,9 +1,9 @@
 Package.describe({
-  name: 'nourharidy:ssl',
-  version: '0.2.2',
+  name: 'secure-meteor',
+  version: '1.0.0',
   summary: 'Sexy SSL support for Meteor',
   documentation: 'README.md',
-  git: 'https://github.com/nourharidy/meteor-ssl.git'
+  git: 'https://github.com/gabrielgrijincu/secure-meteor.git',
 });
 
 Package.onUse(function(api) {

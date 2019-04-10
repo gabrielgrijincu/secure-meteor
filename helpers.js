@@ -11,10 +11,10 @@ switchHTTPS = function(port){
 	}
 	window.location = 'https://'+window.location.hostname+':'+port+window.location.pathname+window.location.search;
 }
-if (Meteor.isClient) {
-	Meteor.startup(function(){
-		Template.registerHelper('isHTTPS', function(){
-			return isHTTPS();
-		})
-	});
-}
+// if (Meteor.isClient) {
+// 	Meteor.startup(function(){
+// 		Template.registerHelper('isHTTPS', function(){
+// 			return isHTTPS();
+// 		})
+// 	});
+// }
